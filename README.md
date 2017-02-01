@@ -1,0 +1,2 @@
+# Bill-App-Latest-version
+This latest version contains some improvements along with resolving previous issues like number format bug for amounts , garbled entries in PDF generated for monthly expenses. New features like reviewing/editing added entries yet before bill generation, viewing history of claimed expenses for a particular date &amp; this app also prohibits the user now to add duplicate entries for a certain date mistakenly , thus provides consistency during bill generation.
