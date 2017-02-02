@@ -16,7 +16,7 @@
 			 }
 			 
 	function remove(){
-		           var con=confirm("Are you sure want to delete this record  ?");
+		           var con=confirm("Are you sure you want to delete this record?");
                              if (con==true){
 					 var s=window.event.srcElement.id;
                        l=s.length; 
@@ -55,7 +55,7 @@
 		         }  
 	    
 		function update(){
-		           var con=confirm("Are you sure want to submit the changes  ?");
+		           var con=confirm("Are you sure you want to submit the changes?");
                              if (con==true){
 					 var s=window.event.srcElement.id;
                        l=s.length; 
@@ -121,7 +121,7 @@
 		   <input type="hidden" name="exp" value="<?= $exp ?>" >
 		   <input type="hidden" name="hidd" value="<?= $curr_val ?>">
 		  
-          <center>  <div style ='font:16px Tahoma;color:Red'><b>Below are the list of entries you have added yet.. </b></div> </center>
+          <center>  <div style ='font:16px Tahoma;color:Red'><b>Below is the list of entries you have added. </b></div> </center>
           <br> 	                  
 			<div id="mydiv">
                  <center> 
