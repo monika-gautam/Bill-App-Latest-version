@@ -183,7 +183,7 @@
           }
         function b(){
 				 
-				            var con=confirm("This will discard all the new entries made yet. Are you sure want to continue ?");
+				            var con=confirm("This will discard all the new entries made in this session. Are you sure you want to continue?");
                              if (con==true){
                             document.myForm.action="onCancelHome.php"; 
                              document.myForm.submit(); 
