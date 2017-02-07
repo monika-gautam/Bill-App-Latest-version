@@ -11,7 +11,7 @@
   function status_back(){
 
 
-    document.myForm.action="cabBills.html";
+    document.myForm.action="index.html";
     document.myForm.submit();
   }
 
