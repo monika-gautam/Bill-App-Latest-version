@@ -272,5 +272,5 @@ $pdf->SetX(140);
 //$pdf->setFont('Times', 'I', 8);
 $pdf->Cell(50,6,'['.$name.']',0,0,'C');
 
-$pdf->Output($name.'_cabBill('.$pmtdt.').pdf','D');
+$pdf->Output($name.'-'.$pmtdt.'_Expense Claim-Cab Charges.pdf','D');
 ?>
