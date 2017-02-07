@@ -7,7 +7,11 @@
 Since ExClaiMadEasy is a PHP application, it can be self-hosted using any of your favorite webservers like Apache or Nginx. Its very light & uses very little resources. You can also host it on any cloud platforms. I have already hosted it on OpenShift & the application is available at http://exclaimadeasy-monika.rhcloud.com/ to have a glimpse of what it can do :-)
 
 ##Installation
-If you are planning to self-host this application, just unpack the contents of this repository to your ``DocumentRoot`` & you're good to go. You will also need to create a MySQL database & an appropriate database user. You will need to change the code accordingly.
+If you are planning to self-host this application, just unpack the contents of this repository to your ``DocumentRoot`` & you're good to go. You will also need to create a MySQL database & an appropriate database user. You will need to change the code accordingly. So, first of all create a database called ``cabBills`` by issuing ``CREATE DATABASE cabBills;``. Then return to your command prompt (Windows) or CLI (Linux) and execute this SQL script ``gentables.sql`` (already packaged with this project). General syntax is as follows:-
+```
+mysql -h hostname -u username cabBills < /path/to/gentables.sql
+```
+This will create the tables in database. 
 
 ##Acknowledgements
 ExClaiMadEasy is a fork of [Bill-App-Latest-version] (https://github.com/monika-gautam/Bill-App-Latest-version) developed by [Monika Gautam] (https://github.com/monika-gautam). I have collaborated with her to introduce new features & report bugs. All credit goes to her hard work & selflessness!
