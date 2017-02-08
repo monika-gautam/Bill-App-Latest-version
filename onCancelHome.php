@@ -5,8 +5,6 @@
   <link rel="stylesheet" type="text/css" media="all" href="/jsdate/jsDatePick_ltr.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css">
   <script type="text/javascript" src="/jsdate/jsDatePick.min.1.3.js"></script>
-
-
   <script language="javascript">
   function isAlpha(thefield)
   {
@@ -23,7 +21,6 @@
     }
     return true;
   }
-
   function isEmpty(thefield){
     var v=thefield.value;
     l=v.length;
@@ -32,7 +29,6 @@
     }
     return false;
   }
-
   function f(){
     new JsDatePick({
       useMode:2,
@@ -40,10 +36,8 @@
       dateFormat:"%Y/%m/%d"
     });
   }
-  
   function checkDt(thefield){
     //alert("checking date");
-
     var dt=thefield.value;
     d=dt.substring(8,10);
     m=dt.substring(5,7);
@@ -55,36 +49,27 @@
     {
       //  alert("sep");
       return false;
-
     }
     else if(d<1 || d>31 || m<1 || m>12|| y<1950 || y>2017)
     {
       return false;
-
     }
-
     else if((m==4 || m==6 || m==9 || m==11) && d>30)
     {
       return false;
-
     }
-
     else if(m==2)
     {
-
       if(y%4==0 && !(y%400!=0  && y%100==100) )
       {
         if(d>29)
         return false;
       }
       else if(d>28)
-
       return false;
     }
-
     return true;
   }
-
   function isId(thefield)
   {
     var s=thefield.value;
@@ -93,7 +78,6 @@
     return false;
     return true;
   }
-
   function validate(){
     if (document.myForm.id.value=="XI"){
       alert("Employee ID: Incomplete field value");
@@ -119,41 +103,29 @@
       alert("  Manager: Empty field");
       document.myForm.mname.focus();
     }
-
     else if (!isAlpha(document.myForm.mname)){
       alert("Name: Non-alphabetic");
       document.myForm.mname.focus();
     }
     else if(isEmpty(document.myForm.dateval))
     {
-
       alert("Date Field can't be left empty");
       document.myForm.dateval.focus();
     }
     else if(!checkDt(document.myForm.dateval))
     {
-
       alert("Date  :  Invalid ");
       document.myForm.dateval.focus();
     }
-
-
     else
     {
       document.myForm.action="feedData.php";
       document.myForm.submit();
-
-
-
     }
   }
-
-
   </script>
 </head>
-
 <form class="pure-form pure-form-stacked" name="myForm" method="post">
-
   <?php
   $dbhandle = mysqli_connect("localhost", "root", "mysql","cabBills")
   or die("Unable to connect to MySQL");
@@ -163,16 +135,11 @@
   mysqli_query($dbhandle,$del1);
   $del2="delete from temp_collectdata";
   mysqli_query($dbhandle,$del2);
-
   ?>
-
   <fieldset>
     <center>
-
       <h2><legend>Bill Claims Management Application </legend></h2>
-
       <label for="nature">Expenses Nature:</label>
-
       <select name="exp">
         <option selected value="Weekly">Weekly
           <option value="15 days"> 15 days
@@ -181,7 +148,6 @@
             <label for="dateval">Bill Submission Date: </label>
             <input id="dateval" type="text" placeholder="Choose Date" name="dateval" onClick="f()">
             <span class="pure-form-message">This is a required field.</span>
-
             <label for="id">Employee ID : </label>
             <input id="id" type="email" name="id" value="XI" autofocus>
             <span class="pure-form-message">This is a required field.</span>
@@ -198,11 +164,7 @@
             <input type="button" class="pure-button pure-button-primary" value="Next" onClick="validate()">
             <input type="reset" class="pure-button pure-button-primary" value="Cancel">
             <input type="button" class="pure-button pure-button-primary" value="See History" onclick="location.href='billHistory.php';"">
-
           </fieldset>
         </form>
-
-
-
       </body>
       </html>
