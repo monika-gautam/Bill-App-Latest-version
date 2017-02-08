@@ -11,7 +11,22 @@ If you are planning to self-host this application, just unpack the contents of t
 ```
 mysql -h hostname -u username cabBills < /path/to/gentables.sql
 ```
-This will create the tables in database. 
+This will create the tables in database where data will be written to (this also acts as means to hold historical data for retrieval).
+
+*FPDF Installation* : - At the heart of this app, there lies the core feature i.e generation of PDF file containing all your entries to be submitted. So, proper installation of FPDF library is must. To install it, download the archive from its official site (mentioned in last segment) & unpack the contents to the DocumentRoot. Then rename it to ``fpdf``. Make sure, it has Read & Execute permissions for owner. Then, in all the scripts that call FPDF viz. ``genbillpdf.php``, ``genbill1pdf.php``, ``monthly_genbillpdf.php`` & ``monthly_genbillpdf1.php`` look for the line that says : -
+```
+require('fpdf.php');
+```
+Change this to ``require('fpdf/fpdf.php');`` This will make it look for the class script inside ``fpdf`` directory.
+Please note that this project is based on Ubuntu which provides a repository to install ``fpdf`` from ``apt-get`` command. If you are using the same, install it with ``apt-get install fpdf`` command & then create a directory called ``fpdf`` inside your DocumentRoot. After this, create a soft-link to this directory using below command after changing to this directory.
+```
+ln -s /usr/share/php/fpdf fpdf/
+```
+This will install FPDF correctly. In case no PDF is generated, look for PHP logs. You will see errors like :-
+```
+'FPDF error: Could not include font definition file'
+```
+So, you get the idea what's wrong. Make sure you enter correct location in those scripts as told above or install it correctly.
 
 ##Acknowledgements
 ExClaiMadEasy is a fork of [Bill-App-Latest-version] (https://github.com/monika-gautam/Bill-App-Latest-version) developed by [Monika Gautam] (https://github.com/monika-gautam). I have collaborated with her to introduce new features & report bugs. All credit goes to her hard work & selflessness!
