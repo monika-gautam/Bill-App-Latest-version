@@ -156,6 +156,23 @@
 <form class="pure-form pure-form-stacked" name="myForm" method="post">
     <center>
         <?php
+// installs global error and exception handlers
+Rollbar::init(array('access_token' => 'ff5fa5a93f9b4f58a49c047d1205fa0e'));
+
+// Message at level 'info'
+Rollbar::report_message('testing 123', 'info');
+
+// Catch an exception and send it to Rollbar
+try {
+    throw new Exception('test exception');
+} catch (Exception $e) {
+    Rollbar::report_exception($e);
+}
+
+// Will also be reported by the exception handler
+throw new Exception('test 2');
+?>
+        <?php
         $dbhandle = mysqli_connect("localhost", "root", "mysql","cabBills")
         or die("Unable to connect to MySQL");
         $id = $_POST['id'];
