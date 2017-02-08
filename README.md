@@ -13,7 +13,7 @@ mysql -h hostname -u username cabBills < /path/to/gentables.sql
 ```
 This will create the tables in database where data will be written to (this also acts as means to hold historical data for retrieval).
 
-*FPDF Installation* : - At the heart of this app, there lies the core feature i.e generation of PDF file containing all your entries to be submitted. So, proper installation of FPDF library is must. To install it, download the archive from its official site (mentioned in last segment) & unpack the contents to the DocumentRoot. Then rename it to ``fpdf``. Make sure, it has Read & Execute permissions for owner. Then, in all the scripts that call FPDF viz. ``genbillpdf.php``, ``genbill1pdf.php``, ``monthly_genbillpdf.php`` & ``monthly_genbillpdf1.php`` look for the line that says : -
+**FPDF Installation** : - At the heart of this app, there lies the core feature i.e generation of PDF file containing all your entries to be submitted. So, proper installation of FPDF library is must. To install it, download the archive from its official site (mentioned in last segment) & unpack the contents to the DocumentRoot. Then rename it to ``fpdf``. Make sure, it has Read & Execute permissions for owner. Then, in all the scripts that call FPDF viz. ``genbillpdf.php``, ``genbill1pdf.php``, ``monthly_genbillpdf.php`` & ``monthly_genbillpdf1.php`` look for the line that says : -
 ```
 require('fpdf.php');
 ```
