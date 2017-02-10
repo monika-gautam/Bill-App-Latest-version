@@ -156,7 +156,7 @@
 <form class="pure-form pure-form-stacked" name="myForm" method="post">
     <center>
         <?php
-        $dbhandle = mysqli_connect("localhost", "root", "mysql","cabBills")
+        $dbhandle = mysqli_connect("localhost", "root", "123456","cabBills")
         or die("Unable to connect to MySQL");
         $id = $_POST['id'];
         $_SESSION['id']=$id;
@@ -190,7 +190,7 @@
                             <td> <input type="text" name="brdtm1" value="Morning" readonly>
                             </td>
                             <td> <input type="text" name="amt1" size="10"> </td>
-                            <td> <input type="text" value="1.00" size="10" readonly> </td>
+                            <td> <input type="text" value="1.00" size="10" name="rate1" readonly> </td>
                         </tr>
                         <tr>
                             <td> <input type="text" name="brdtm2" value="Evening" readonly>
